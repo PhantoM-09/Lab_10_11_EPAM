@@ -26,11 +26,11 @@ namespace Framework.Tests
             mainPage = new AuthorizationPage(webDriver).OpenPage().EnterUsernameAndPassword(testUser).SignIn();
         }
 
-        //[TearDown]
-        //public void CloseBrowser()
-        //{
-        //    Logger.ShowInfo($"Close test: {TestContext.CurrentContext.Test.MethodName}");
-        //    DriverSingleton.CloseDriver();
-        //}
+        [TearDown]
+        public void CloseBrowser()
+        {
+            Logger.ShowInfo($"Close test: {TestContext.CurrentContext.Test.MethodName}");
+            DriverSingleton.CloseDriver();
+        }
     }
 }
